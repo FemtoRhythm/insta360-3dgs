@@ -1,14 +1,6 @@
 # -*- coding: utf-8 -*-
-"""可选质量评估: 训练视图指标 + 全景端到端重建验证。
-
---mode train: 渲染全部训练视图计算 PSNR/SSIM/L1 (快)
---mode pano : 从等矩形位姿把 6 面拼回整张全景与真实全景对比 (端到端空间还原证据, 慢)
-
-用法:
-    python -m insta360_3dgs verify --output out/ --mode train
-    python -m insta360_3dgs verify --output out/ --mode pano
-
-注意: 本阶段依赖 torch(CUDA), 由 CLI 重执行。
+"""质量评估。--mode train 算训练视图的 PSNR/SSIM/L1，--mode pano 把 6 面拼回
+整张全景与真实全景做端到端对比。依赖 torch(CUDA)，由 CLI 重执行。
 """
 from __future__ import annotations
 

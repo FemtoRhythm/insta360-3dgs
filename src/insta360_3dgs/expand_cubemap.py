@@ -1,18 +1,10 @@
 # -*- coding: utf-8 -*-
-"""步骤3: 从等矩形 SfM 位姿展开 cube 面 — 渲染 6 面透视视图并写 PINHOLE sparse。
+"""从等矩形 SfM 位姿展开 6 个共光心透视面，写 PINHOLE sparse。
 
-对每帧等矩形相机 (旋转 world_to_cam, 光心 center):
-    face_rotation = CUBE_ROTATIONS[face] @ world_to_cam     # 面朝向
-    face_translation = -face_rotation @ center               # 保证 6 面共光心
-再用与 COLMAP EQUIRECTANGULAR 一致的公式反投影 + 双线性采样渲染 6 面视图,
-保证图像内容与位姿自洽。
-
-用法:
-    python -m insta360_3dgs cubemap --output out/
-输入:  <output>/frames/*.jpg + <output>/sfm/0/ (步骤1/2 产出)
-输出:  <output>/cubemap/{images/frame_XXXX_0..5.jpg, sparse/0/{cameras,images,points3D}}
-
-注意: 本阶段依赖 gaussian-splatting 的 scene.colmap_loader, 由 CLI 重执行。
+对每帧等矩形相机（旋转 world_to_cam，光心 center）：
+    face_rotation    = CUBE_ROTATIONS[face] @ world_to_cam
+    face_translation = -face_rotation @ center          # 6 面共光心
+再按 COLMAP EQUIRECTANGULAR 的反投影公式做双线性采样，保证图像与位姿自洽。
 """
 from __future__ import annotations
 

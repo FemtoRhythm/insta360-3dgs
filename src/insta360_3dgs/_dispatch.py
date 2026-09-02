@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
-"""重执行机制: 把需要 torch/pycolmap 的重型阶段交给 runtime python 运行。
+"""重型阶段重执行。
 
-uv 项目环境只装 numpy/scipy/Pillow/plyfile 等轻量依赖, 而 sfm(需 pycolmap)、
-cubemap/train/verify(需 torch + 已编译 gaussian-splatting) 等阶段依赖已有的
-gaussian-splatting/.venv 环境。这里用 RUNTIME_PYTHON 重新执行对应模块, 并注入
-PYTHONPATH 指向本项目 src/, 使 `insta360_3dgs.<module>` 可被导入。
+uv 环境只装轻量依赖，sfm/train 这些需要 torch/pycolmap 的阶段交给
+gaussian-splatting/.venv 里的解释器跑，并注入 PYTHONPATH 指向本项目 src/。
 """
 from __future__ import annotations
 

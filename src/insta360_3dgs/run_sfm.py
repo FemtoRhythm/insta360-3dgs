@@ -1,16 +1,9 @@
 # -*- coding: utf-8 -*-
-"""步骤2: 等矩形 SfM — 用 COLMAP EQUIRECTANGULAR 相机模型重建真实相机轨迹。
+"""等矩形 SfM，用 COLMAP EQUIRECTANGULAR 相机模型重建相机轨迹。
 
-每个全景帧用一个 EQUIRECTANGULAR 相机 (光心在球心) 建模, 得到平滑的相机运动。
-这是正确还原拍摄空间的关键: 相比"把 6 个 cube 面当独立针孔相机"的朴素做法,
-它避免了共光心面被误当自由相机而产生的伪基线。
-
-用法:
-    python -m insta360_3dgs sfm --output out/ [--threads 8]
-输入:  <output>/frames/*.jpg (步骤1 产出)
-输出:  <output>/sfm/0/{cameras.bin, images.bin, points3D.bin}
-
-注意: 本阶段依赖 pycolmap, 由 CLI 通过 runtime python 重执行 (见 _dispatch.py)。
+每个全景帧用一个光心在球心的等矩形相机建模。先在这里拿到平滑的相机轨迹，
+而不是把 6 个 cube 面当独立针孔相机直接 SfM——那样共光心的面会被误当成自由
+相机，凭空多出伪基线。
 """
 from __future__ import annotations
 

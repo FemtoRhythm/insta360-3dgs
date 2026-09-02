@@ -1,13 +1,8 @@
 # -*- coding: utf-8 -*-
-"""步骤5: 导出标准点云 PLY (x,y,z + rgb)。
+"""导出标准点云 PLY（x,y,z + rgb）。
 
-3DGS 的 point_cloud.ply 字段是 f_dc_*/opacity/scale/rot, 普通查看器不认,
-需转成标准 x,y,z + rgb 并过滤低不透明度漂浮点。
-
-用法:
-    python -m insta360_3dgs export --output out/ [--iteration 30000]
-输入:  <output>/model/point_cloud/iteration_<n>/point_cloud.ply
-输出:  <output>/pointcloud.ply
+3DGS 的 point_cloud.ply 存的是 f_dc_*/opacity/scale/rot，普通查看器不认，
+这里转成 x,y,z + rgb，并过滤低不透明度的漂浮点。
 """
 from __future__ import annotations
 

@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
-"""预览: 用训练好的模型渲染全景图, 并与原始全景帧对比, 直观查看重建效果。
-
-用法:
-    python -m insta360_3dgs preview --output out/ [--frame N] [--iteration 30000]
-输出:  <output>/preview/{pano_render.jpg, pano_gt.jpg, compare.jpg}
-
-注意: 本阶段依赖 torch(CUDA), 由 CLI 重执行。
-"""
+"""用训练好的模型渲染全景图，和原始全景帧拼一起对比。依赖 torch(CUDA)，由 CLI 重执行。"""
 from __future__ import annotations
 
 import argparse

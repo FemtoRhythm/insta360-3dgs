@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""步骤1: 从 360° 等矩形全景视频抽帧 (调用 ffmpeg)。
-
-用法:
-    python -m insta360_3dgs extract --input video.mp4 --output out/ [--fps 0.5] [--width 2880]
-"""
+"""从 360° 等矩形全景视频抽帧（调 ffmpeg）。"""
 from __future__ import annotations
 
 import argparse

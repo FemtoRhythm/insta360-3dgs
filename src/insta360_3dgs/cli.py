@@ -1,18 +1,8 @@
 # -*- coding: utf-8 -*-
-"""统一命令行入口: Insta360 .insv -> 全景 3DGS -> 点云。
+"""命令行入口。
 
-子命令:
-    run      一键端到端: .insv -> 等矩形 mp4 -> SfM -> cube 面 -> 3DGS -> 点云
-    stitch   仅拼接 .insv -> 等矩形 mp4 (MediaSDK)
-    extract  仅抽帧
-    sfm      仅等矩形 SfM
-    cubemap  仅展开 cube 面
-    train    仅 3DGS 训练
-    export   仅导出标准点云
-    verify   质量评估 (train/pano)
-
-轻量阶段 (stitch/extract) 在 uv 环境内执行; 重型阶段 (sfm/cubemap/train/export/verify)
-由 _dispatch 用 runtime python 重执行。
+轻量阶段 (stitch/extract) 在 uv 环境内直接跑，重型阶段
+(sfm/cubemap/train/export/verify) 交给 _dispatch 用 runtime python 重执行。
 """
 from __future__ import annotations
 

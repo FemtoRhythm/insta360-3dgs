@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
-"""共享配置: 输出目录结构、几何参数、外部依赖路径解析。
+"""共享配置: 输出目录布局、几何/训练参数、外部依赖路径。
 
-约定输出目录结构:
+输出目录约定:
     <output>/
-        stitched/          # 步骤0: MediaSDK 拼接出的等矩形 mp4
-        frames/            # 步骤1: 抽出的全景帧 frame_%04d.jpg
-        sfm/               # 步骤2: 等矩形 SfM 稀疏重建 (结果在 sfm/0/)
-        cubemap/           # 步骤3: cube 面训练数据 (images/ + sparse/0/)
-        model/             # 步骤4: 3DGS 训练输出
-        logs/              # 日志
-        pointcloud.ply     # 最终导出的标准点云
+        stitched/          拼接出的等矩形 mp4
+        frames/            全景帧 frame_%04d.jpg
+        sfm/               等矩形 SfM（结果在 sfm/0/）
+        cubemap/           cube 面训练数据（images/ + sparse/0/）
+        model/             3DGS 训练输出
+        logs/              日志
+        pointcloud.ply     最终点云
 """
 from __future__ import annotations
 

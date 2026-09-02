@@ -1,12 +1,7 @@
 # -*- coding: utf-8 -*-
-"""步骤4: 3DGS 训练 (手写训练循环, 含初始 scale/opacity 缩放)。
+"""3DGS 训练（手写训练循环，含初始 scale/opacity 缩放）。
 
-用法:
-    python -m insta360_3dgs train --output out/ [--iterations 30000]
-输入:  <output>/cubemap/ (步骤3 产出, 含 images/ + sparse/0/)
-输出:  <output>/model/point_cloud/iteration_<n>/point_cloud.ply
-
-注意: 本阶段依赖 torch(CUDA) + 已编译 gaussian-splatting, 由 CLI 重执行。
+依赖 torch(CUDA) + 已编译 gaussian-splatting，由 CLI 用 runtime python 重执行。
 """
 from __future__ import annotations
 

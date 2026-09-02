@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
-"""步骤0: 用 Insta360 MediaSDK 把 .insv 双鱼眼视频拼接为等矩形 mp4。
+"""用 MediaSDK 把 .insv 双鱼眼视频拼成等矩形 mp4。
 
-Insta360 双镜头视频按 `_00_`(前镜头) / `_10_`(后镜头) 成对保存, 需要成对传给
-MediaSDKTest.exe 才能拼出完整 360° 等矩形画面。
-
-用法:
-    python -m insta360_3dgs stitch --input a.insv --output out/stitched
+双镜头按 `_00_`（前）/ `_10_`（后）成对保存，要成对传给 MediaSDKTest.exe
+才能拼出完整的 360° 画面。
 """
 from __future__ import annotations
 
