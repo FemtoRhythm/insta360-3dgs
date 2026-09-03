@@ -100,6 +100,6 @@ uv run insta360-3dgs export  --output out/ --iteration 30000
 - 训练阶段内部会切到 gaussian-splatting 目录，`--output` 记得传绝对路径（CLI 已经帮你处理了）。
 - 想重跑某一步，删掉对应的输出子目录就行，比如 `rm -rf out/model` 再跑一次 train。
 
-## Project Note
+## 项目说明
+本项目为此前任职期间完成的个人作品，迁移至此个人仓库做归档与技术分享，代码版权归本人所有。
 This project was developed during my previous employment, migrated to personal open‑source repository for archive & demonstration.
-项目说明：本项目为此前任职期间完成的个人作品，迁移至此个人仓库做归档与技术分享，代码版权归本人所有。
