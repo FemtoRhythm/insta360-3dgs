@@ -3,7 +3,20 @@ name = "insta360-3dgs"
 version = "0.1.0"
 description = "Insta360 .insv -> 全景 3D Gaussian Splatting 点云流水线 (MediaSDK 拼接 + 等矩形 SfM + 3DGS)"
 readme = "README.md"
-requires-python = ">=3.11,<3.12"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "FemtoRhythm" }]
+keywords = ["insta360", "3dgs", "gaussian-splatting", "colmap", "panorama", "point-cloud"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Graphics :: 3D Modeling",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
 dependencies = [
     "numpy>=1.24",
     "scipy>=1.10",
@@ -11,6 +24,10 @@ dependencies = [
     "plyfile>=0.8",
     "tqdm>=4.64",
 ]
+
+[project.urls]
+Homepage = "https://github.com/FemtoRhythm/insta360-3dgs"
+Repository = "https://github.com/FemtoRhythm/insta360-3dgs"
 
 [project.scripts]
 insta360-3dgs = "insta360_3dgs.cli:main"
