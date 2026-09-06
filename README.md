@@ -8,8 +8,8 @@
 
 <table>
   <tr>
-    <td align="center" width="50%"><img src="https://cdn.jsdelivr.net/gh/FemtoRhythm/insta360-3dgs@main/docs/showcase.gif" alt="点云动态展示" width="100%"></td>
-    <td align="center" width="50%"><img src="https://cdn.jsdelivr.net/gh/FemtoRhythm/insta360-3dgs@main/docs/real.jpg" alt="拍摄现场实景" width="100%"></td>
+    <td align="center" width="50%"><img src="https://cdn.jsdelivr.net/gh/FemtoRhythm/insta360-3dgs@7603004/docs/showcase.gif" alt="点云动态展示" width="100%"></td>
+    <td align="center" width="50%"><img src="https://cdn.jsdelivr.net/gh/FemtoRhythm/insta360-3dgs@7603004/docs/real.jpg" alt="拍摄现场实景" width="100%"></td>
   </tr>
   <tr>
     <td align="center"><sub>点云动态展示</sub></td>
