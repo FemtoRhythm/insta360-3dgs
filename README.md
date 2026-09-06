@@ -6,13 +6,16 @@
 
 重建出的点云（银山塔林，近塔绕圈拍摄，约 85 万点）：
 
-![点云旋转展示](https://cdn.jsdelivr.net/gh/FemtoRhythm/insta360-3dgs@main/docs/showcase.gif)
-
-![点云静态视图](https://cdn.jsdelivr.net/gh/FemtoRhythm/insta360-3dgs@main/docs/showcase_static.jpg)
-
-拍摄现场实景：
-
-![实景](https://cdn.jsdelivr.net/gh/FemtoRhythm/insta360-3dgs@main/docs/real.jpg)
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="https://cdn.jsdelivr.net/gh/FemtoRhythm/insta360-3dgs@main/docs/showcase.gif" alt="点云动态展示" width="100%"></td>
+    <td align="center" width="50%"><img src="https://cdn.jsdelivr.net/gh/FemtoRhythm/insta360-3dgs@main/docs/real.jpg" alt="拍摄现场实景" width="100%"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>点云动态展示</sub></td>
+    <td align="center"><sub>拍摄现场实景</sub></td>
+  </tr>
+</table>
 
 ## 它做了什么
 
