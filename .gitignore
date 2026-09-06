@@ -14,3 +14,10 @@ output/
 out/
 *.ply
 *.log
+
+# 原始素材与中间产物
+*.insv
+*.mp4
+
+# PyInstaller
+*.spec

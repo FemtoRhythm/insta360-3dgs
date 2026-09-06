@@ -1,6 +1,18 @@
 # insta360-3dgs
 
-把 Insta360 拍出来的 `.insv` 双鱼眼视频，自动重建成全景 3D Gaussian Splatting，最后导出一个标准的 `x,y,z + rgb` 点云（PLY），可以直接扔进 CloudCompare、MeshLab 这类工具看。
+把 Insta360 拍出来的 `.insv` 双鱼眼视频，自动重建成全景 3D Gaussian Splatting，最后导出一个标准的 `x,y,z + rgb` 点云（PLY），可以直接扔进 CloudCompare、MeshLab 这类工具看。内置一个跨平台点云查看器，选文件即可在浏览器里交互式查看。
+
+## 效果展示
+
+重建出的点云（银山塔林，近塔绕圈拍摄，约 85 万点）：
+
+![点云旋转展示](docs/showcase.gif)
+
+![点云静态视图](docs/showcase_static.jpg)
+
+拍摄现场实景：
+
+![实景](docs/real.jpg)
 
 ## 它做了什么
 
@@ -70,6 +82,36 @@ uv run insta360-3dgs export  --output out/ --iteration 30000
 ```
 
 另外两个可选的子命令：`verify` 算 PSNR/SSIM/L1，`preview` 渲染全景图和原图对比。
+
+## 点云查看器
+
+导出的 `pointcloud.ply` 可以用内置查看器在浏览器里交互式查看，支持自由旋转（可倒置）、缩放、平移、自动旋转和点大小调节。
+
+### 网页版
+
+```bash
+cd viewer/web
+python -m http.server 8000
+# 把 pointcloud.ply 放到 viewer/web/ 同目录，浏览器打开 http://localhost:8000/
+```
+
+### 桌面版（选文件自动开浏览器）
+
+依赖仅 Python 标准库（`tkinter` / `http.server`）：
+
+```bash
+cd viewer
+python viewer_app.py
+# 弹出窗口，选择 .ply 文件后自动启动本地服务并打开默认浏览器
+```
+
+### 打包成单文件 exe（Windows）
+
+```powershell
+cd viewer
+.\build_exe.ps1
+# 产物: dist\PLYViewer.exe，双击即可选文件查看
+```
 
 ## 常用参数
 
