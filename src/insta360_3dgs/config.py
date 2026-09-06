@@ -30,12 +30,12 @@ def _resolve_env(name: str, default: Path) -> Path:
 # gaussian-splatting 代码 + 已编译 CUDA 扩展 (diff-gaussian-rasterization / simple-knn)
 GAUSSIAN_SPLATTING_DIR = _resolve_env(
     "INSTA360_3DGS_GS_DIR",
-    PROJECT_ROOT.parent / "20260823_1" / "gaussian-splatting",
+    PROJECT_ROOT.parent / "gaussian-splatting",
 )
 # pycolmap 4.1.1 (cp311) 预编译包目录
 PYLIBS_DIR = _resolve_env(
     "INSTA360_3DGS_PYLIBS",
-    PROJECT_ROOT.parent / "20260823_1" / "pylibs",
+    PROJECT_ROOT.parent / "pylibs",
 )
 # MediaSDK 离线拼接可执行文件
 MEDIASDK_EXE = _resolve_env(

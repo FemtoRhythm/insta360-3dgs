@@ -56,8 +56,8 @@ uv sync
 | 环境变量 | 默认值 | 说明 |
 | --- | --- | --- |
 | `INSTA360_3DGS_MEDIASDK_EXE` | `../sdk/MediaSDK/bin/MediaSDKTest.exe` | MediaSDK 拼接程序 |
-| `INSTA360_3DGS_GS_DIR` | `../20260823_1/gaussian-splatting` | gaussian-splatting 目录 |
-| `INSTA360_3DGS_PYLIBS` | `../20260823_1/pylibs` | pycolmap 预编译包 |
+| `INSTA360_3DGS_GS_DIR` | `../gaussian-splatting` | gaussian-splatting 目录 |
+| `INSTA360_3DGS_PYLIBS` | `../pylibs` | pycolmap 预编译包 |
 | `INSTA360_3DGS_RUNTIME_PYTHON` | `<GS_DIR>/.venv/Scripts/python.exe` | 跑重型阶段的解释器 |
 
 ## 使用
@@ -65,7 +65,7 @@ uv sync
 一条命令跑完，输入可以是单个 `.insv` 文件，也可以是装了一堆 `.insv` 的目录：
 
 ```bash
-uv run insta360-3dgs run --input VID_20260823_215314_00_006.insv --output out/
+uv run insta360-3dgs run --input example_00_006.insv --output out/
 # 或整个目录，训练完顺手做质量评估
 uv run insta360-3dgs run --input ./raw_clips --output out/ --verify
 ```

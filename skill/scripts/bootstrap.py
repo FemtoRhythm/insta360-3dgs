@@ -23,18 +23,10 @@ from pathlib import Path
 GITHUB_REPO = "https://github.com/FemtoRhythm/insta360-3dgs"
 
 # 本机已知部署位置，作为「自动识别」的候选路径；可自行增删。
-_KNOWN_PROJECT_CANDIDATES = [
-    Path(r"d:\Documents\WorkSpace\python\i2\20260828_3\insta360-3dgs"),
-]
-_KNOWN_MEDIASDK_CANDIDATES = [
-    Path(r"d:\Documents\WorkSpace\python\i2\20260828_3\sdk\MediaSDK\bin\MediaSDKTest.exe"),
-]
-_KNOWN_GS_DIR_CANDIDATES = [
-    Path(r"d:\Documents\WorkSpace\python\i2\20260828_3\20260823_1\gaussian-splatting"),
-]
-_KNOWN_PYLIBS_CANDIDATES = [
-    Path(r"d:\Documents\WorkSpace\python\i2\20260828_3\20260823_1\pylibs"),
-]
+_KNOWN_PROJECT_CANDIDATES: list[Path] = []
+_KNOWN_MEDIASDK_CANDIDATES: list[Path] = []
+_KNOWN_GS_DIR_CANDIDATES: list[Path] = []
+_KNOWN_PYLIBS_CANDIDATES: list[Path] = []
 
 
 # --------------------------------------------------------------------------- #
@@ -84,7 +76,7 @@ def resolve_deps(project: Path | None) -> dict[str, Path | None]:
 
     gs_dir = _pick(
         "INSTA360_3DGS_GS_DIR",
-        [parent / "20260823_1" / "gaussian-splatting"],
+        [parent / "gaussian-splatting"],
         _KNOWN_GS_DIR_CANDIDATES,
     )
     return {
@@ -96,7 +88,7 @@ def resolve_deps(project: Path | None) -> dict[str, Path | None]:
         "gs_dir": gs_dir,
         "pylibs": _pick(
             "INSTA360_3DGS_PYLIBS",
-            [parent / "20260823_1" / "pylibs"],
+            [parent / "pylibs"],
             _KNOWN_PYLIBS_CANDIDATES,
         ),
         "runtime_python": (
