@@ -90,6 +90,10 @@ uv run insta360-3dgs export  --output out/ --iteration 30000
 
 导出的 `pointcloud.ply` 可以用内置查看器在浏览器里交互式查看，支持自由旋转（可倒置）、缩放、平移、自动旋转和点大小调节。
 
+### 直接下载（Windows exe）
+
+[下载 PLYViewer.exe](https://github.com/FemtoRhythm/insta360-3dgs/releases/download/v0.2.0/PLYViewer.exe)（免安装，双击即可选文件查看）
+
 ### 桌面版（选文件自动开浏览器）
 
 依赖仅 Python 标准库（`tkinter` / `http.server`）：
