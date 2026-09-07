@@ -90,14 +90,6 @@ uv run insta360-3dgs export  --output out/ --iteration 30000
 
 导出的 `pointcloud.ply` 可以用内置查看器在浏览器里交互式查看，支持自由旋转（可倒置）、缩放、平移、自动旋转和点大小调节。
 
-### 网页版
-
-```bash
-cd viewer/web
-python -m http.server 8000
-# 把 pointcloud.ply 放到 viewer/web/ 同目录，浏览器打开 http://localhost:8000/
-```
-
 ### 桌面版（选文件自动开浏览器）
 
 依赖仅 Python 标准库（`tkinter` / `http.server`）：
